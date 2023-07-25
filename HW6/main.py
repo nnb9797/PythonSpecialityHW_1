@@ -14,10 +14,10 @@ import module_check.date_check as dch
 import module_check.chess_check as chess
 
 
-successful_positions = 4  #  кол-во успешных расстановок
+successful_positions = 4  #  кол-во успешных расстановок ферзей
 
 if __name__ == "__main__":
-    data = input('Введите дату в формате DD.MM.YYYY: ')
+    data = input("Введите дату в формате DD.MM.YYYY: ")
     queens_positions = [
       [(0, 5), (1, 2), (4, 3), (2, 2), (7, 6), (5, 1), (2, 7), (3, 4)],
       [(0, 2), (1, 5), (2, 3), (3, 0), (4, 7), (5, 4), (6, 6), (7, 1)],
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     successful_positions_list = []  # список удачных расстановок
 
     while successful_cases < successful_positions:
-        generated_position = chess.gen_positions()
+        generated_position = chess.generate_positions()
         total_positions_generated += 1
         if chess.check_queens(generated_position):
             successful_cases += 1

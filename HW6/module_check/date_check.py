@@ -3,13 +3,13 @@
 from datetime import datetime
 from sys import argv
 
-__all__ = ['check_year', 'date_validator']
+__all__ = ["check_year", "date_validator"]
 
 def leap_year_check(date: str) -> bool:
     CHECK_NORMAL_1 = 4
     CHECK_NORMAL_2 = 100
     CHECK_NORMAL_3 = 400
-    YEARS = range(1, 10000)
+    YEARS = range(1, 9999)
     year = int(date.split(".")[-1])
     if year in YEARS and year % CHECK_NORMAL_1 == 0 and year % CHECK_NORMAL_2 != 0 or year % CHECK_NORMAL_3 == 0:
         return True
