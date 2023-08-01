@@ -1,0 +1,158 @@
+{
+  "C:\\Users\\Natalya\\PycharmProjects\\pythonProject2\\HW8": {
+    "HW_tasks": {
+      "size": 6913,
+      "file_or_dir": "hw_directory"
+    },
+    "__pycache__": {
+      "size": 6380,
+      "file_or_dir": "hw_directory"
+    },
+    "bd_task2.csv": {
+      "size": 87,
+      "file_or_dir": "file"
+    },
+    "bd_task2.json": {
+      "size": 221,
+      "file_or_dir": "file"
+    },
+    "json_pickle.bin": {
+      "size": 301,
+      "file_or_dir": "file"
+    },
+    "pickle_to_csv.csv": {
+      "size": 256,
+      "file_or_dir": "file"
+    },
+    "task4.json": {
+      "size": 647,
+      "file_or_dir": "file"
+    },
+    "task_1.json": {
+      "size": 372,
+      "file_or_dir": "file"
+    },
+    "task_1.py": {
+      "size": 1041,
+      "file_or_dir": "file"
+    },
+    "task_2.py": {
+      "size": 1975,
+      "file_or_dir": "file"
+    },
+    "task_3.py": {
+      "size": 945,
+      "file_or_dir": "file"
+    },
+    "task_4.py": {
+      "size": 2008,
+      "file_or_dir": "file"
+    },
+    "task_5.py": {
+      "size": 812,
+      "file_or_dir": "file"
+    },
+    "task_6.py": {
+      "size": 1435,
+      "file_or_dir": "file"
+    },
+    "task_7.py": {
+      "size": 622,
+      "file_or_dir": "file"
+    },
+    "__init__.py": {
+      "size": 0,
+      "file_or_dir": "file"
+    }
+  },
+  "C:\\Users\\Natalya\\PycharmProjects\\pythonProject2\\HW8\\HW_tasks": {
+    "__pycache__": {
+      "size": 1988,
+      "file_or_dir": "hw_directory"
+    },
+    "bd_task2.csv": {
+      "size": 0,
+      "file_or_dir": "file"
+    },
+    "bd_task2.json": {
+      "size": 109,
+      "file_or_dir": "file"
+    },
+    "HW_task_2.py": {
+      "size": 3151,
+      "file_or_dir": "file"
+    },
+    "HW_task_3.py": {
+      "size": 995,
+      "file_or_dir": "file"
+    },
+    "json_pickle.bin": {
+      "size": 5,
+      "file_or_dir": "file"
+    },
+    "result.csv": {
+      "size": 0,
+      "file_or_dir": "file"
+    },
+    "result.json": {
+      "size": 0,
+      "file_or_dir": "file"
+    },
+    "result.pickle": {
+      "size": 0,
+      "file_or_dir": "file"
+    },
+    "task4.json": {
+      "size": 2,
+      "file_or_dir": "file"
+    },
+    "task_1.json": {
+      "size": 372,
+      "file_or_dir": "file"
+    },
+    "task_1.txt": {
+      "size": 291,
+      "file_or_dir": "file"
+    },
+    "__init__.py": {
+      "size": 0,
+      "file_or_dir": "file"
+    }
+  },
+  "C:\\Users\\Natalya\\PycharmProjects\\pythonProject2\\HW8\\HW_tasks\\__pycache__": {
+    "HW_task_2.cpython-310.pyc": {
+      "size": 1988,
+      "file_or_dir": "file"
+    }
+  },
+  "C:\\Users\\Natalya\\PycharmProjects\\pythonProject2\\HW8\\__pycache__": {
+    "task_1.cpython-310.pyc": {
+      "size": 729,
+      "file_or_dir": "file"
+    },
+    "task_2.cpython-310.pyc": {
+      "size": 1174,
+      "file_or_dir": "file"
+    },
+    "task_3.cpython-310.pyc": {
+      "size": 910,
+      "file_or_dir": "file"
+    },
+    "task_4.cpython-310.pyc": {
+      "size": 965,
+      "file_or_dir": "file"
+    },
+    "task_5.cpython-310.pyc": {
+      "size": 986,
+      "file_or_dir": "file"
+    },
+    "task_6.cpython-310.pyc": {
+      "size": 1460,
+      "file_or_dir": "file"
+    },
+    "__init__.cpython-310.pyc": {
+      "size": 156,
+      "file_or_dir": "file"
+    }
+  }
+}
