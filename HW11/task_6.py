@@ -4,6 +4,7 @@
 
 
 class Rectangle:
+    """Документация прямоугольника """
 
     def __init__(self, side_a: int = 1, side_b: int | None = None):
         self._side_a = side_a
@@ -35,16 +36,25 @@ class Rectangle:
 
 
 if __name__ == '__main__':
-    rect1 = Rectangle(2, 3)
-    rect2 = Rectangle(2, 3)
+    rect1 = Rectangle(4, 6)
+    rect2 = Rectangle(4, 6)
     rect3 = rect1 + rect2
-    print(rect3)
 
-    rect5 = Rectangle(2, 2)
-    rect6 = Rectangle(3, 3)
-    print(rect1 < rect2)
-    print(rect1 > rect2)
-    print(rect1 <= rect2)
-    print(rect1 >= rect2)
-    print(rect1 == rect2)
-    print(rect1 != rect2)
+    print("\nРезультат сложения:")
+    print(f"{rect1} + {rect2} = {rect3}")
+
+    rect4 = Rectangle(14, 16)
+    rect5 = Rectangle(4, 6)
+    rect6 = rect4 - rect5
+
+    print("\nРезультат вычитания:")
+    print(f"{rect4} - {rect5} = {rect6}")
+    print("\nCравнение прямоугольников:\n")
+    print(f"{rect1 } < {rect2} - {rect1 < rect2}")
+    print(f"{rect1} > {rect2} - {rect1 > rect2}")
+    print(f"{rect1} <= {rect2} - {rect1 <= rect2}")
+    print(f"{rect1} >= {rect2} - {rect1 >= rect2}")
+    print(f"{rect1} == {rect2} - {rect1 == rect2}")
+    print(f"{rect1} != {rect2} - {rect1 != rect2}")
+    print("\nДокументация прямоугольника:\n")
+    print({help(Rectangle)})

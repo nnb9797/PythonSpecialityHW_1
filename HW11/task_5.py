@@ -44,6 +44,7 @@ eggs = Rectangle(6)
 add_reg = spam + eggs
 sub_reg = spam - eggs
 
-print(f'{sub_reg.width = }, {sub_reg.height =}')
-print(f'{add_reg.width = }, {add_reg.height =}')
+print(f'Результат вычитания: {sub_reg.width = }, {sub_reg.height =}')
+print(f'Результат сложения: {add_reg.width = }, {add_reg.height =}')
+print("\nДокументация прямоугольника:\n")
 print({help(Rectangle)})
