@@ -11,7 +11,6 @@ from statistics import mean
 
 
 class NameValidator:
-    """Валидация ФИО на первую заглавную букву и наличие только букв."""
     def __set_name__(self, owner, name):
         self.private_name = '_' + name
 
@@ -25,15 +24,14 @@ class NameValidator:
     @staticmethod
     def _validate_name(value):
         if not isinstance(value, str):
-            raise AttributeError('Имя должно быть строкой!')
+            raise AttributeError('Name is not a string value!')
         if not value.isalpha():
-            raise AttributeError('Имя должно состоять только из букв!')
+            raise AttributeError('Name contains not only letters!')
         if not value.istitle():
-            raise AttributeError('Имя должно начинаться с заглавной буквы!')
+            raise AttributeError('First letter is not capital!')
 
 
 class ItemValidator:
-    """Валидация значений: предметов в списке, оценок студента и результатов тестов."""
     def __init__(self, min_value: int = None, max_value: int = None):
         self._min_value = min_value
         self._max_value = max_value
@@ -54,11 +52,11 @@ class ItemValidator:
         for value in value.values():
             for value_tuple in value:
                 if not isinstance(value_tuple, int):
-                    raise TypeError(f'Значение {value_tuple} должно быть целым числом!')
+                    raise TypeError(f' {value_tuple} is not an integer!')
                 if value_tuple is not None and value_tuple < self._min_value:
-                    raise ValueError(f'Значение {value_tuple} должно быть больше или равно {self._min_value}!')
+                    raise ValueError(f' {value_tuple} is not more or equal to {self._min_value}!')
                 if value_tuple is not None and value_tuple > self._max_value:
-                    raise ValueError(f'Значение {value_tuple} должно быть меньше или равно {self._max_value}!')
+                    raise ValueError(f' {value_tuple} is not less or equal to {self._max_value}!')
 
     def _validate_items(self, value: dict):
         """Валидация предметов на наличие в списке."""
@@ -69,11 +67,10 @@ class ItemValidator:
                 if d == v:
                     valid += 1
         if valid != len(value):
-            raise AttributeError(f'Предмета нет в списке')
+            raise AttributeError(f'This subject is not in the list!')
 
     @staticmethod
     def _load_data():
-        """Загрузка предметов из списка в файле csv."""
         data = {}
         file_name = 'school_subjects.csv'
         i = 0
@@ -88,7 +85,6 @@ class ItemValidator:
 
 
 class Student:
-    """Сообщает оценки и средний балл по тестам для каждого предметаи по оценкам всех предметов вместе взятых"""
     first_name: str = NameValidator()
     last_name: str = NameValidator()
     grades: dict = ItemValidator(2, 5)
@@ -105,38 +101,37 @@ class Student:
         tests = '\n'.join(f'{k}: {v}' for k, v in self._tests.items())
         avg_test_results = '\n'.join(f'{k}: {v}' for k, v in self._avg_tests().items())
         avg_grades_result = '\n'.join(f'{k}: {v}' for k, v in self._avg_grades().items())
-        return f'Студент:\n{self._first_name} {self._last_name}' \
-               f'\n\nОценки по предметам:\n{grades}' \
-               f'\n\nОценки по тестам:\n{tests}' \
-               f'\n\nСредний балл по тестам:\n{avg_test_results}' \
-               f'\n\nСредний балл {avg_grades_result}'
+        return f'Student:\n{self._first_name} {self._last_name}' \
+               f'\n\nSubject grades:\n{grades}' \
+               f'\n\nTest grades:\n{tests}' \
+               f'\n\nTest average:\n{avg_test_results}' \
+               f'\n\nAverage grade {avg_grades_result}'
 
     def _avg_tests(self):
-        """Средний балл по тестам."""
+        """Test average."""
         avg_results = dict()
         for key, value in self._tests.items():
             avg_results[key] = round(mean(value), 2)
         return avg_results
 
     def _avg_grades(self):
-        """Средний балл по всем предметам."""
+        """Average grade in all subjects."""
         avg_result = 0
         for values in self._grades.values():
             avg_result += mean(values)
-        return {'по всем предметам': round(avg_result / len(self._grades.values()), 2)}
+        return {'in all subjects': round(avg_result / len(self._grades.values()), 2)}
 
 
 def main():
     student = Student()
-    student.first_name = 'Дарья'
-    student.last_name = 'Смирнова'
-    student.grades = {'Русский язык': (4, 5, 5), 'Биология': (5, 5, 4, 5), 'История': (4, 5, 5, 5),
-                      'Английский язык': (4, 5, 5)}
-    student.tests = {'Литература': (80, 92, 100), 'Химия': (85, 90, 95), 'Английский язык': (84, 95, 91)}
+    student.first_name = 'John'
+    student.last_name = 'Smith'
+    student.grades = {'Physics': (4, 5, 5), 'Biology': (5, 5, 4, 5), 'History': (4, 5, 5, 5),
+                      'English': (4, 5, 5)}
+    student.tests = {'Literature': (80, 92, 100), 'Chemistry': (85, 90, 95), 'English': (84, 95, 91)}
     print(student)
-
     try:
-        student.first_name = 'дарья'
+        student.first_name = 'john'
     except Exception as exc:
         print(f'{exc.__class__.__name__}:{exc}')
     try:
@@ -144,7 +139,23 @@ def main():
     except Exception as exc:
         print(f'{exc.__class__.__name__}:{exc}')
     try:
-        student.grades = {'Русский язык': (8, 5, 5)}
+        student.grades = {'English': (8, 5, 5)}
+    except Exception as exc:
+        print(f'{exc.__class__.__name__}:{exc}')
+    try:
+        student.grades = {'English': (2.2, 5, 5)}
+    except Exception as exc:
+        print(f'{exc.__class__.__name__}:{exc}')
+    try:
+        student.grades = {'English': (1, 5, 5)}
+    except Exception as exc:
+        print(f'{exc.__class__.__name__}:{exc}')
+    try:
+        student.tests = {'Math': (100, 85, 95)}
+    except Exception as exc:
+        print(f'{exc.__class__.__name__}:{exc}')
+    try:
+        student.tests = {'Math': (150, 85, 95)}
     except Exception as exc:
         print(f'{exc.__class__.__name__}:{exc}')
 

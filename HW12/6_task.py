@@ -3,7 +3,6 @@
 
 
 class Validator:
-    """Дескриптор с валидацией размера."""
     def __init__(self, min_value: float = None, max_value: float = None):
         self.min_value = min_value
         self.max_value = max_value
@@ -20,13 +19,12 @@ class Validator:
 
     def validate(self, value):
         if self.min_value is not None and value < self.min_value:
-            raise ValueError(f'{value} меньше, чем {self.min_value}!')
+            raise ValueError(f'{value} is less than {self.min_value}!')
         if self.max_value is not None and value > self.max_value:
-            raise ValueError(f'{value} больше, чем {self.max_value}!')
+            raise ValueError(f'{value} is greater than {self.max_value}!')
 
 
 class Rectangle:
-    """Ограничение ширины для вычисления прямоугольника через класс Validator."""
     width = Validator(1, 100)
     length = Validator(1, 200)
 
