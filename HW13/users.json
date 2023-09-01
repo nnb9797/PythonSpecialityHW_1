@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Robin",
+        "id": "0001",
+        "access_level": 1
+    },
+    {
+        "name": "Bob",
+        "id": "0002",
+        "access_level": 2
+    },
+    {
+        "name": "Mike",
+        "id": "0003",
+        "access_level": 3
+    },
+    {
+        "name": "Alice",
+        "id": "0004",
+        "access_level": 4
+    },
+    {
+        "name": "Tom",
+        "id": "00005",
+        "access_level": 5
+    },
+    {
+        "name": "Sam",
+        "id": "0006",
+        "access_level": 6
+    },
+    {
+        "name": "David",
+        "id": "0007",
+        "access_level": 7
+    }
+]
