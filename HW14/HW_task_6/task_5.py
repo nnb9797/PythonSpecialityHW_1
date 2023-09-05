@@ -104,6 +104,6 @@ class Project:
 if __name__ == '__main__':
     with Project().fill_project_users('project_users.json') as p:
         print(p.project_users)
-        p.enter("Илья", 654)
+        p.enter("Илья", 554)
         print(p.admin)
         p.del_user("Григорий", 444, 5)

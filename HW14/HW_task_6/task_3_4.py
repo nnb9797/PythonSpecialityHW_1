@@ -17,7 +17,7 @@ class User:
     level: int = None
 
     def __eq__(self, other):
-        """Users comparison"""
+        """Users comparison by name and id"""
         return  self.id_ == other.id_ and self.name == other.name
 
 if __name__ == "__main__":

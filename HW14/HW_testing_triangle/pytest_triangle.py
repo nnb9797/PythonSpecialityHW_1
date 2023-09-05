@@ -1,7 +1,6 @@
 import pytest
 from HW14.HW_testing_triangle.triangle import get_triangle_side
 
-
 def test_convert_string_to_float():
     with pytest.raises(ValueError):
         get_triangle_side('asd')

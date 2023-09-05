@@ -1,7 +1,6 @@
 from HW14.HW_testing_triangle.triangle import get_triangle_side
 import unittest
 
-
 class UnitTest(unittest.TestCase):
 
     def test_convert_string_to_float(self):

@@ -9,7 +9,7 @@ class LevelError(OwnException):
 
     def __str__(self):
         return f"""Отказано в доступе!
-Ваш уровень доступа({self.user_level}) должен быть ниже чем, уровень доступа администратора({self.admin_level})"""
+Ваш уровень доступа({self.user_level}) должен быть ниже, чем уровень доступа администратора({self.admin_level})"""
 
 
 class NotAllowedError(OwnException):
