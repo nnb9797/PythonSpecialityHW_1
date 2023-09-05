@@ -35,10 +35,10 @@ class Project:
 
     def enter(self, name, id_):
         """
-        Метод входа в систему.
-        :param name: Имя пользователя
-        :param id_: Идентификатор пользователя
-        :exception NotAllowedError: Срабатывает, если пользователя нет в списке.
+        System entry method.
+        :param name: User name
+        :param id_: User id
+        :exception NotAllowedError: If User is not in the list.
         """
         user = User(name, id_)
         for proj_user in self.project_users:
@@ -50,12 +50,12 @@ class Project:
 
     def add_user(self, name, id_, level):
         """
-        Метод добавления нового пользователя в проект.
-        :param name: Имя пользователя
-        :param id_: Идентификатор пользователя
-        :param level: Уровень доступа пользователя
-        :exception AdminNotFoundError: Срабатывает, если не установлен администратор.
-        :exception LevelError: Срабатывает, если уровень пользователя больше, чем у администратора
+        New User addition to the project method.
+        :param name: User name
+        :param id_: User id
+        :param level: User access level
+        :exception AdminNotFoundError: If administrator is not set.
+        :exception LevelError: If user's access level exceeds аdmin's access level.
         """
         if self.admin is None:
             raise AdminNotFoundError
@@ -65,13 +65,13 @@ class Project:
 
     def del_user(self, name, id_, level):
         """
-        Метод удаления пользователя из проекта.
-        :param name: Имя пользователя
-        :param id_: Идентификатор пользователя
-        :param level: Уровень доступа пользователя
-        :exception AdminNotFoundError: Срабатывает, если не установлен администратор.
-        :exception LevelError: Срабатывает, если уровень пользователя больше, чем у администратора
-        :exception ValueError: Срабатывает, если пользователя с введёнными данными нет в проекте
+        User deletion from the project method.
+        :param name: User name
+        :param id_: User id
+        :param level: User access level
+        :exception AdminNotFoundError: If administrator is not set.
+        :exception LevelError: If user's access level exceeds аdmin's access level.
+        :exception ValueError: If user is not found in the project.
         """
         if self.admin is None:
             raise AdminNotFoundError()
@@ -80,15 +80,15 @@ class Project:
         try:
             self.project_users.remove(User(name, id_, level))
         except ValueError:
-            print(f"Ошибка удаления!\nПользователя {name} нет в списке пользователей!")
+            print(f'Ошибка удаления пользователя!\nПользователь {name} не найден в списке!')
 
     def __enter__(self):
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
         """
-        Метод выхода из контекстного менеджера
-        При выходе, актуальный список пользователей сохраняется в файл.
+        Exit method.
+        After exit actual list of all users is saved in json file.
         """
         self.file = open(f'project_users.json', 'w', encoding='utf-8')
         temp = {k: {} for k in range(1, 8)}
@@ -106,4 +106,4 @@ if __name__ == '__main__':
         print(p.project_users)
         p.enter("Илья", 654)
         print(p.admin)
-        # p.del_user("Григорий", 444, 5)
+        p.del_user("Григорий", 444, 5)
