@@ -31,3 +31,4 @@ if __name__ == '__main__':
 # python Terminal.py -m_1='123 456 789' -m_2='123 456 789' -operation='='
 # python Terminal.py -m_1='123 456 789' -m_2='123 456 789' -operation='+'
 # python Terminal.py -m_1='123 456 789' -m_2='123 456 789' -operation='*'
+

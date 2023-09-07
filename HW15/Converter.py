@@ -1,4 +1,5 @@
 def convert_format(input: list[str] = None) -> list[float]:
+
     """Input data converting."""
 
     if len(input) == 1:
